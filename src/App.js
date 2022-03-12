@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from "./Form";
+
+//Array with info about movies and tickets
+const movies = [
+  {
+    name: "Avengers",
+    available: 25,
+  },
+  {
+    name: "SpiderMan",
+    available: 40,
+  },
+  {
+    name: "Batman",
+    available: 34,
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //Cinema tickets, add or delete movie tickets
+    <>
+      <h1>Peliculas</h1>
+      {/* mapping array and show elements of the object */}
+      {movies.map((movie) => (
+        <Form movie={movie} />
+      ))}
+    </>
   );
 }
 
